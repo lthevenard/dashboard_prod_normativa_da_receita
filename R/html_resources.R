@@ -33,7 +33,7 @@ texto_apresentacao_footnote <- function() {
     str_replace(
       "repositório próprio",
       "repositório próprio" %>% 
-        add_link_tag("https://www.google.com") %>% 
+        add_link_tag("https://github.com/lthevenard/dashboard_prod_normativa_da_receita") %>% 
         bold_with_color()
     ) %>% 
     str_replace(
@@ -108,7 +108,7 @@ UI_footer <- function() {
     "</p>",
     "<p style = 'text-align: center; font-size:0.8em; color: #b5d1e8;'>| ",
     "<a style = 'color: #b5d1e8;', href = 'https://github.com/lthevenard/receita_scraper'>Repositório da pesquisa</a> | ",
-    "<a style = 'color: #b5d1e8;', href = 'https://github.com/lthevenard/'>Repositório deste dashboard</a> | ",
+    "<a style = 'color: #b5d1e8;', href = 'https://github.com/lthevenard/dashboard_prod_normativa_da_receita'>Repositório deste dashboard</a> | ",
     "<a style = 'color: #b5d1e8;', href = 'https://www.linkedin.com/in/lthevenard/'>LinkedIn do autor</a> | ",
     "</p>"
   )
