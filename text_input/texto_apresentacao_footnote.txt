@@ -1,0 +1,1 @@
+Observação: Uma descrição detalhada da metodologia empregada utilizada nesta pesquisa, assim como os códigos utilizados para raspar e processar os dados, podem ser obtidos no repositório público desta pesquisa no Github. Além disso, este dashboard também possui um repositório próprio.
