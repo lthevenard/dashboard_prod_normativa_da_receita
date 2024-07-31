@@ -5,7 +5,7 @@ account: lthevenard
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12388269
-bundleId:
+bundleId: 8927332
 url: https://lthevenard.shinyapps.io/prod_normativa_receita/
 version: 1
 asMultiple: FALSE
