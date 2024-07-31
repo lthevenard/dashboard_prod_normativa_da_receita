@@ -1,7 +1,9 @@
 texto_apresentacao_da_pesquisa <- function() {
   paste0(
+    "<div style = 'text-align: center; font-family: monospace, color: #183d7a; font-weight: bold;'>",
+    "Apresentação da Pesquisa</div>",
     htitle_with_color(
-      "A evolução da produção normativa da Receita Federal do Brasil (1988-2020): análise empírica e implicações regulatórias",
+      "A evolução da produção normativa da Receita Federal do Brasil: análise empírica e implicações regulatórias",
       color = darker_blue,
       htitle = 2
     ), 
@@ -13,7 +15,7 @@ texto_apresentacao_da_pesquisa <- function() {
     str_replace(
       "(?<=deu origem a uma )publicação acadêmica",
       "publicação acadêmica" %>% 
-        add_link_tag("https://www.scielo.br/j/rdgv/a/fq5sqBqSVYMMzdSJxgdGBts/") %>% 
+        add_link_tag("https://periodicos.fgv.br/revdireitogv/article/view/91354") %>% 
         bold_with_color()
     )
 }
@@ -53,7 +55,7 @@ texto_principal_mod_tamanho <- function() {
       color = darker_blue,
       htitle = 3
     ), 
-    "\n<hr><br>\n<p>",
+    "<hr>\n<p>",
     str_replace_all(corpo, "\\n+", "</p>\n<p>"),
     "</p>"
   )
@@ -69,7 +71,7 @@ texto_principal_mod_interacao <- function() {
       color = darker_blue,
       htitle = 3
     ), 
-    "\n<hr><br>\n<p>",
+    "<hr>\n<p>",
     str_replace_all(corpo, "\\n+", "</p>\n<p>"),
     "</p>"
   )
@@ -77,10 +79,23 @@ texto_principal_mod_interacao <- function() {
 
 texto_footnote_mod_interacao <- function() {
   paste0(
-    "<div style = 'color: gray;'><i><p>",
+    "<br><br><hr><br><br><div style = 'color: gray; font-size: 80%;'>",
     read_file("text_input/texto_footnote_mod_interacao.txt") %>%
-      str_replace_all("\\n+", "</p>\n<p>"),
-    "</p></i>"
+      str_replace_all("\\n+", "</p>\n<p>") %>% 
+      str_replace(
+        "respositório público desta pesquisa",
+        "respositório público desta pesquisa" %>% 
+          add_link_tag("https://github.com/lthevenard/receita_scraper") %>% 
+          bold_with_color()
+      ) %>% 
+      str_replace(
+        "publicação acadêmica",
+        "publicação acadêmica" %>% 
+          add_link_tag("https://periodicos.fgv.br/revdireitogv/article/view/91354") %>% 
+          bold_with_color()
+      )
+      ,
+    "</div><br><br>"
   )
 }
 
@@ -94,16 +109,38 @@ texto_principal_mod_conteudo <- function() {
       color = darker_blue,
       htitle = 2
     ), 
-    "\n<hr><br>\n<p>",
+    "<hr>\n<p>",
     str_replace_all(corpo, "\\n+", "</p>\n<p>"),
     "</p>"
+  )
+}
+
+texto_footnote_mod_conteudo <- function() {
+  paste0(
+    "<br><br><hr><br><br><div style = 'color: gray; font-size: 80%;'>",
+    read_file("text_input/texto_footnote_mod_conteudo.txt") %>%
+      str_replace_all("\\n+", "</p>\n<p>") %>% 
+      str_replace(
+        "respositório público desta pesquisa",
+        "respositório público desta pesquisa" %>% 
+          add_link_tag("https://github.com/lthevenard/receita_scraper") %>% 
+          bold_with_color()
+      ) %>% 
+      str_replace(
+        "publicação acadêmica",
+        "publicação acadêmica" %>% 
+          add_link_tag("https://periodicos.fgv.br/revdireitogv/article/view/91354") %>% 
+          bold_with_color()
+      )
+    ,
+    "</div><br><br>"
   )
 }
 
 UI_footer <- function() {
   paste0(
     "</br><p style = 'text-align: center; font-size:0.8em; color: white; line-height: 50%;'>",
-    "<b>Criado por</b>: Lucas Thevenard | ",
+    "<b>Dashboard criado por</b>: Lucas Thevenard | ",
     "<b>Última atualização</b>: 15/07/2024",
     "</p>",
     "<p style = 'text-align: center; font-size:0.8em; color: #b5d1e8;'>| ",

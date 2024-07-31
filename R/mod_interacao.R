@@ -18,7 +18,8 @@ mod_interacao_UI <- function(id) {
         checkboxGroupInput(
           ns("opcoes_scores"),
           label = HTML(paste0(htitle_with_color("Mostrar Scores Parciais:", color = darker_blue, htitle = 4), "<br>")),
-          choices = c("Score de Modificações Passivas", "Score de Modificações Ativas")
+          choices = c("Score de Modificações Passivas", "Score de Modificações Ativas"),
+          selected = c("Score de Modificações Passivas", "Score de Modificações Ativas")
         ),
         br(), br()
       ),
@@ -26,11 +27,11 @@ mod_interacao_UI <- function(id) {
         fluidRow(
           width = 9,
           htmlOutput(ns("texto_principal_mod_interacao")),
-          br(), br(), hr(), br(), br(),
+          br(),
           plotlyOutput(ns("UI_mainPanel_graph_interacoes")),
-          br(), br(), hr(), br(), br(),
+          br(),
           htmlOutput(ns("texto_footnote_mod_interacao")),
-          br(), br(), br(), br()
+          br()
         )
       )
     ),
@@ -45,7 +46,7 @@ mod_interacao_server <- function(id) {
     function(input, output, session) {
       
       output$texto_principal_mod_interacao <- renderUI({HTML(texto_principal_mod_interacao())})
-      output$texto_explicacao_scores_de_interacao <- renderUI({HTML(texto_footnote_mod_interacao())})
+      output$texto_footnote_mod_interacao <- renderUI({HTML(texto_footnote_mod_interacao())})
       
       ano_min_interacao <- reactive({input$ano_normas_interacao[1]})
       ano_max_interacao <- reactive({input$ano_normas_interacao[2]})

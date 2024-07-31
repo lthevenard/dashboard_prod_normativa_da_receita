@@ -26,28 +26,27 @@ mod_tamanho_UI <- function(id) {
       mainPanel(
         fluidRow(
           width = 9,
-          htmlOutput(ns("texto_principal_mod_tamanho")),
-          br(), br(), hr(), br(), br()
+          htmlOutput(ns("texto_principal_mod_tamanho"))
         ),
         tabsetPanel(
           tabPanel(
             "Número de Atos Normativos",
-            br(),
+            br(), br(),
             plotlyOutput(ns("UI_mainPanel_graph_evolucao_atos")),
-            br(), br()
+            br()
           ),
           tabPanel(
-            "Tamanho Médio dos Atos Normativos",
-            br(),
+            "Extensão Média dos Atos Normativos",
+            br(), br(),
             plotlyOutput(ns("UI_mainPanel_scatter_evolucao_media_palavras")),
-            br(), br(), hr(), br(), br(),
+            br(),
             plotlyOutput(ns("UI_mainPanel_box_evolucao_media_palavras")),
-            br(), br()
+            br()
           )
         )
       )
     ),
-    br(),
+    br(), br(),
     fluidRow(style = paste0("background-color: ", deep_blue), column(12, HTML(UI_footer())))
   )
 }

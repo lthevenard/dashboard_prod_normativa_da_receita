@@ -1,0 +1,12 @@
+name: prod_normativa_receita
+title: prod_normativa_receita
+username: lthevenard
+account: lthevenard
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12388269
+bundleId:
+url: https://lthevenard.shinyapps.io/prod_normativa_receita/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
